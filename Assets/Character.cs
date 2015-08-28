@@ -87,9 +87,11 @@ public class Character : MonoBehaviour {
             bye(roomie);
             roomie.respond_bye(this);
         }
+        Debug.Assert(room.Contains(this));
         room.Remove(this);
+        Debug.Assert(!room.Contains(this));
 
-        // TODO: clean up empty rooms and cells
+        // TODO: clean up empty rooms and rows
     }
 
 

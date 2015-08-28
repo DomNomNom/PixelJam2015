@@ -12,23 +12,21 @@ public class MyInput : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        int dx = 0;
-        int dy = 0;
+        if (Input.GetKeyDown(KeyCode.UpArrow   ))  singleMove( 0, 1); // dy += 1;
+        if (Input.GetKeyDown(KeyCode.LeftArrow ))  singleMove(-1, 0); // dx -= 1;
+        if (Input.GetKeyDown(KeyCode.DownArrow ))  singleMove( 0,-1); // dy -= 1;
+        if (Input.GetKeyDown(KeyCode.RightArrow))  singleMove( 1, 0); // dx += 1;
 
-        if (Input.GetKeyDown(KeyCode.UpArrow   )) dy += 1;
-        if (Input.GetKeyDown(KeyCode.LeftArrow )) dx -= 1;
-        if (Input.GetKeyDown(KeyCode.DownArrow )) dy -= 1;
-        if (Input.GetKeyDown(KeyCode.RightArrow)) dx += 1;
+        if (Input.GetKeyDown(KeyCode.W         ))  singleMove( 0, 1);
+        if (Input.GetKeyDown(KeyCode.A         ))  singleMove(-1, 0);
+        if (Input.GetKeyDown(KeyCode.S         ))  singleMove( 0,-1);
+        if (Input.GetKeyDown(KeyCode.D         ))  singleMove( 1, 0);
 
-        if (Input.GetKeyDown(KeyCode.W         )) dy += 1;
-        if (Input.GetKeyDown(KeyCode.A         )) dx -= 1;
-        if (Input.GetKeyDown(KeyCode.S         )) dy -= 1;
-        if (Input.GetKeyDown(KeyCode.D         )) dx += 1;
+    }
 
-        if (dx != 0  ||  dy != 0) {
-            foreach (Character c in listeners) {
-                c.onInput(dx, dy);
-            }
+    void singleMove(int dx, int dy) {
+        foreach (Character c in listeners) {
+            c.onInput(dx, dy);
         }
-	}
+    }
 }

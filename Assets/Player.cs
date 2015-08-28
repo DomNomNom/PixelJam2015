@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Player : Character {
 
+    public int Food;
 
     public List<Quest> quests = new List<Quest>();
     public void acceptQuest(Quest q) {
