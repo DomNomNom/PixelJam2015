@@ -22,6 +22,12 @@ public class MyInput : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.S         ))  singleMove( 0,-1);
         if (Input.GetKeyDown(KeyCode.D         ))  singleMove( 1, 0);
 
+        // Add VIM key bindings
+        if (Input.GetKeyDown(KeyCode.K         ))  singleMove( 0, 1);
+        if (Input.GetKeyDown(KeyCode.H         ))  singleMove(-1, 0);
+        if (Input.GetKeyDown(KeyCode.J         ))  singleMove( 0,-1);
+        if (Input.GetKeyDown(KeyCode.L         ))  singleMove( 1, 0);
+
     }
 
     void singleMove(int dx, int dy) {
