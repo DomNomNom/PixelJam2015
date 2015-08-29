@@ -2954,6 +2954,10 @@ Prefab:
       propertyPath: isPersistentQuest
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 11465636, guid: 5ceb8cbfad2014d7782b3a629f586f23, type: 2}
+      propertyPath: promisedReward
+      value: 100
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5ceb8cbfad2014d7782b3a629f586f23, type: 2}
   m_IsPrefabParent: 0
@@ -5155,6 +5159,10 @@ Prefab:
       propertyPath: eatPeriod
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11453016, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
+      propertyPath: textMesh
+      value: 
+      objectReference: {fileID: 1814716132}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
   m_IsPrefabParent: 0
@@ -6646,6 +6654,11 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 444478, guid: 0703bfee5b8a0a6419314bd696d63418, type: 2}
   m_PrefabInternal: {fileID: 598226565}
+--- !u!102 &1814716132 stripped
+TextMesh:
+  m_PrefabParentObject: {fileID: 10291018, guid: 747c6eafc09ef364aa4897ce6140ffe0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1297673731}
 --- !u!1001 &1815938820
 Prefab:
   m_ObjectHideFlags: 0
