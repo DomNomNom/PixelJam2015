@@ -146,7 +146,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 146826837}
+    m_TransformParent: {fileID: 1628153241}
     m_Modifications:
     - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: followUpQuests.Array.size
@@ -154,11 +154,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -182,12 +182,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: followUpQuests.Array.data[0]
       value: 
-      objectReference: {fileID: 1888906404}
+      objectReference: {fileID: 818822916}
     - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: isPersistentQuest
       value: 0
@@ -407,7 +407,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 146826837}
+    m_TransformParent: {fileID: 1628153241}
     m_Modifications:
     - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: followUpQuests.Array.size
@@ -415,11 +415,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_LocalPosition.y
-      value: .949999988
+      value: 3.95000005
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_LocalPosition.z
@@ -443,7 +443,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 107930, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: m_Name
@@ -456,7 +456,7 @@ Prefab:
     - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: followUpQuests.Array.data[0]
       value: 
-      objectReference: {fileID: 702962918}
+      objectReference: {fileID: 818822916}
     - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
       propertyPath: promisedReward
       value: 100
@@ -766,7 +766,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &146826837
 Transform:
   m_ObjectHideFlags: 0
@@ -776,10 +776,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 84132457}
-  - {fileID: 702962917}
-  - {fileID: 1888906403}
+  m_Children: []
   m_Father: {fileID: 1628153241}
   m_RootOrder: 0
 --- !u!4 &147030931 stripped
@@ -2750,6 +2747,101 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0703bfee5b8a0a6419314bd696d63418, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &818822913
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 1628153241}
+    m_Modifications:
+    - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: followUpQuests.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_RootOrder
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: followUpQuests.Array.data[0]
+      value: 
+      objectReference: {fileID: 1888906404}
+    - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: isPersistentQuest
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: promisedReward
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 107930, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_Name
+      value: RandomQuest
+      objectReference: {fileID: 0}
+    - target: {fileID: 107930, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+      propertyPath: followUpQuests.Array.data[1]
+      value: 
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11435550, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+  m_IsPrefabParent: 0
+--- !u!4 &818822914 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 413036, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+  m_PrefabInternal: {fileID: 818822913}
+--- !u!1 &818822915 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 107930, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e, type: 2}
+  m_PrefabInternal: {fileID: 818822913}
+--- !u!114 &818822916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 818822915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 510f86dac7c614ba6849f143c25b70ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  promisedReward: 1000
+  isPersistentQuest: 1
+  isFirstQuest: 0
+  followUpQuests: []
+  sprite: {fileID: 1172472350}
 --- !u!4 &822672204 stripped
 Transform:
   m_PrefabParentObject: {fileID: 444478, guid: 0703bfee5b8a0a6419314bd696d63418, type: 2}
@@ -3949,6 +4041,11 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 444478, guid: 0703bfee5b8a0a6419314bd696d63418, type: 2}
   m_PrefabInternal: {fileID: 952028177}
+--- !u!212 &1172472350 stripped
+SpriteRenderer:
+  m_PrefabParentObject: {fileID: 21268130, guid: dea4a80bb31a3ad4e8b088d82ce1dc4e,
+    type: 2}
+  m_PrefabInternal: {fileID: 818822913}
 --- !u!1001 &1178741351
 Prefab:
   m_ObjectHideFlags: 0
@@ -5301,7 +5398,7 @@ Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
-    m_TransformParent: {fileID: 146826837}
+    m_TransformParent: {fileID: 1628153241}
     m_Modifications:
     - target: {fileID: 11425238, guid: f910da8051c6d4044b04171617fcfda0, type: 2}
       propertyPath: followUpQuests.Array.size
@@ -5309,11 +5406,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400696, guid: f910da8051c6d4044b04171617fcfda0, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400696, guid: f910da8051c6d4044b04171617fcfda0, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 400696, guid: f910da8051c6d4044b04171617fcfda0, type: 2}
       propertyPath: m_LocalPosition.z
@@ -5337,7 +5434,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400696, guid: f910da8051c6d4044b04171617fcfda0, type: 2}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11425238, guid: f910da8051c6d4044b04171617fcfda0, type: 2}
       propertyPath: isPersistentQuest
@@ -5764,10 +5861,14 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1628153240}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 146826837}
+  - {fileID: 84132457}
+  - {fileID: 702962917}
+  - {fileID: 1888906403}
+  - {fileID: 818822914}
   m_Father: {fileID: 0}
   m_RootOrder: 5
 --- !u!1001 &1635630077
