@@ -25,7 +25,24 @@ public class FoodDisplay : MonoBehaviour {
     }
 
     public void displayFatAdd(int amount) {
+        float x = text_food.transform.localPosition.x;
 
+        GameObject txt = Utils.Instantiate(
+            template_movingText,
+            container_movingText,
+            new Vector3(x, 10, 0) 
+        );
+        txt.GetComponent<TextMesh>().text = "+" + appendUnit(amount);
+        iTween.MoveTo(
+            txt,
+            iTween.Hash(
+                "y", text_food.transform.position.y - textVerticalOffset,
+                "time", 1.0,
+                "easeType", "easeOutQuad",
+                "oncomplete", "onFinishMove",
+                "oncompletetarget", txt 
+            )
+        );
     }
     public void displayFatBurn(int amount) {
         GameObject txt = Utils.Instantiate(
@@ -53,7 +70,7 @@ public class FoodDisplay : MonoBehaviour {
     }
 
     private string appendUnit(int amount) {
-        return amount + " kJ";
+        return amount + " cal";
     }
 
 
