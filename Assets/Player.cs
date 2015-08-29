@@ -8,10 +8,7 @@ public class Player : Character {
 
     public int fatBurned = 0;
 
-    public int fatHigh;
-    public int fatLow;
-
-    private int _fat = 100;
+    private int _fat = 200;
     public int fat
     {
         get { return _fat; }
@@ -49,6 +46,22 @@ public class Player : Character {
         deathListeners.Add(listener);
     }
 
+    public AnimationCurve hueCurve;
+    public Color statusColor() {
+        return Utils.HSVToRGB(
+            hueCurve.Evaluate(fat),
+            1.0f,
+            1.0f
+        );
+       // if (fat < fatLow) {
+       //      return Color.red;
+       // } else if (fat < fatHigh) {
+       //      return Color.orange;
+       // } else {
+       //      return Color.green;
+       // }
+    }
+
     public List<Quest> quests = new List<Quest>();
     public void acceptQuest(Quest q) {
         if (!quests.Contains(q)) {
@@ -72,7 +85,7 @@ public class Player : Character {
     // Update is called once per frame
     protected override void Update () {
         base.Update();
-        this.RefreshColor();
+        textMesh.color = statusColor();
 
         if (fat < 0 && !wasDead) {
             wasDead = true;
@@ -82,17 +95,6 @@ public class Player : Character {
         }
     }
 
-    private void RefreshColor() {
-       Color c = Color.red;
-       if (fat < fatLow) {
-            c = Color.red;
-       } else if (fat < fatHigh) {
-            c = Color.yellow;
-       } else {
-            c = Color.green;
-       }
-       textMesh.color = c;
-    }
 
 
 
@@ -102,6 +104,7 @@ public class Player : Character {
 
     public override void onInput(int dx, int dy) {
         if (fat < 0) return;
+        if (TimeStats.timeRemaining <= 0) return;
         if (enter(posX + dx, posY + dy)) {
             exit(posX, posY);
             posX += dx;

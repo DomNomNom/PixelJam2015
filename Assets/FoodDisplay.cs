@@ -30,7 +30,7 @@ public class FoodDisplay : MonoBehaviour {
         GameObject txt = Utils.Instantiate(
             template_movingText,
             container_movingText,
-            new Vector3(x, 10, 0) 
+            new Vector3(x, 10, 0)
         );
         txt.GetComponent<TextMesh>().text = "+" + appendUnit(amount);
         iTween.MoveTo(
@@ -40,7 +40,7 @@ public class FoodDisplay : MonoBehaviour {
                 "time", 1.0,
                 "easeType", "easeOutQuad",
                 "oncomplete", "onFinishMove",
-                "oncompletetarget", txt 
+                "oncompletetarget", txt
             )
         );
     }
@@ -73,6 +73,7 @@ public class FoodDisplay : MonoBehaviour {
 
     // Update is called once per frame
     void Update () {
+        text_food.color     = Player.instance.statusColor();
         text_food.text      = appendUnit(Player.instance.fat);
         text_foodEaten.text = appendUnit(Player.instance.fatBurned);
         text_expense.text   = appendUnit(Player.instance.moveCost());

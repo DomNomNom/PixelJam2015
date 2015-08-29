@@ -19,7 +19,7 @@ public class ShowIfPlayerDead : MonoBehaviour {
         Player.instance.addDeathListener(this);
     }
 
-    public void onPlayerDeath() {
+    public virtual void onPlayerDeath() {
         target.SetActive(showIfDead);
     }
 }
