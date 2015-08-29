@@ -51,13 +51,14 @@ public class Character : MonoBehaviour {
 
     private bool gotMovementBlocked;
     protected virtual bool enter(int x, int y) {
-        getRoom(x,y).Add(this);
+        List<Character> roomies = new List<Character>(getRoom(x,y));  // a copy to iterate over
+        List<Character> room = getRoom(x,y);
+        room.Add(this);
 
-        List<Character> room = new List<Character>(getRoom(x,y));
-        // Utils.Assert(!room.Contains(this));
+        Utils.Assert(!roomies.Contains(this));
         gotMovementBlocked = false;
         List<Character> greeted = new List<Character>();
-        foreach (Character roomie in room) {
+        foreach (Character roomie in roomies) {
             hello(roomie);
             roomie.respond_hello(this);
             greeted.Add(roomie);
@@ -72,7 +73,7 @@ public class Character : MonoBehaviour {
                 bye(roomie);
                 roomie.respond_bye(this);
             }
-            getRoom(x,y).Remove(this);
+            room.Remove(this);
         }
 
         return !gotMovementBlocked;

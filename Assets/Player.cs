@@ -6,6 +6,8 @@ public class Player : Character {
     public static Player instance;
 
     public int fatBurned = 0;
+    public int maxLowHealth;
+    public int maxMediumHealth;
 
     public int fatHigh;
     public int fatLow;

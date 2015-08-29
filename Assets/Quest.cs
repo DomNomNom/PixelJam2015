@@ -15,7 +15,10 @@ public class Quest : Character {
     private Color disabledColor = Utils.colorFromHex("8C8C8CFF");
 
     protected override void Start() {
-        base.Start();
+        posX = (int)Mathf.Round(transform.position.x);
+        posY = (int)Mathf.Round(transform.position.y);
+        // note: we don't enter(posX, posY) yet as we'll disable ourselves
+
         Debug.Assert(null != sprite);
         originalColor = sprite.color;
 
