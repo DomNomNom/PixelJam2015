@@ -5,6 +5,9 @@ using System.Collections.Generic;
 public class Character : MonoBehaviour {
 
     private static Dictionary<int, Dictionary<int, List<Character>>> rooms = new Dictionary<int, Dictionary<int, List<Character>>>();
+    public static void clearRooms() {
+        rooms.Clear();
+    }
 
     // returns or creates a room at a given coordinate
     static List<Character> getRoom(int x, int y) {

@@ -26,6 +26,7 @@ public class MyInput : MonoBehaviour {
 
         // space = restart
         if (Input.GetKeyDown(KeyCode.Space   )) {
+            Character.clearRooms();
             Application.LoadLevel(Application.loadedLevel);
         }
 

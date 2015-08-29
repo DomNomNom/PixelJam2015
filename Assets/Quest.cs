@@ -24,7 +24,7 @@ public class Quest : Character {
         exit(posX, posY);
         gameObject.SetActive(false);
         if (isFirstQuest) {
-            Player.acceptQuest(this);
+            Player.instance.acceptQuest(this);
         }
     }
 
@@ -40,6 +40,7 @@ public class Quest : Character {
     }
 
 
+    // the quest (this object) has been accepted by the player
     public virtual void begin() {
         gameObject.SetActive(true);
         enter(posX, posY);
@@ -53,20 +54,20 @@ public class Quest : Character {
         if (!canTurnIn()) return;
         if (!(other is Player)) return;
         // Player player = other as Player;
-        if (!Player.quests.Contains(this)) {
+        if (!Player.instance.quests.Contains(this)) {
             Debug.LogWarning("player doesn't contain me! D:");
             return;
         }
 
-        Player.food += promisedReward;
+        Player.instance.fat += promisedReward;
 
         foreach (Quest q in followUpQuests) {
             Debug.Log("ACCEPT!");
-            Player.acceptQuest(q);
+            Player.instance.acceptQuest(q);
         }
 
         if (!isPersistentQuest) {
-            Player.quests.Remove(this);
+            Player.instance.quests.Remove(this);
             willRemoveSelf = true;
         }
     }

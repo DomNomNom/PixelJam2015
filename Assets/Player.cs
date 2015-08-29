@@ -3,38 +3,58 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Player : Character {
+    public static Player instance;
 
-    public static int food = 100;
-    public static int foodEaten = 0;
-    private static float lastMoveTime;
+    public int fatBurned = 0;
+
+    private int _fat = 100;
+    public int fat
+    {
+        get { return _fat; }
+        set {
+            int diff = value - _fat;
+            if (diff == 0) {  // no change
+                return;
+            }
+            else if (diff < 0) {  // burn
+                fatBurned += -diff;
+                FoodDisplay.instance.displayFatBurn(-diff);
+            }
+            else {  // fat gain
+                FoodDisplay.instance.displayFatAdd(diff);
+            }
+
+            _fat = value;
+        }
+    }
+
+
+    private float lastMoveTime = 0;
     public AudioSource movementSound;
 
-    private static Player defaultInstance;
     public AnimationCurve moveCostCurve;
-    public static int moveCost() {
+    public int moveCost() {
         float restingTime = Time.time - lastMoveTime;
-        return (int)defaultInstance.moveCostCurve.Evaluate(restingTime);
+        return (int)moveCostCurve.Evaluate(restingTime);
     }
-    public static void eat(int amount) {
-        if (food < 0) return;
-        food -= amount;
-        foodEaten += amount;
+    public void eat(int amount) {
+        if (fat < 0) return;
+        fat -= amount;
+        fatBurned += amount;
     }
 
     private float nextEatPeriod;
-    public float eatPeriod = 3.0f;
+    public float eatPeriod = 1.0f;
 
-    public static List<Quest> quests = new List<Quest>();
-    public static void acceptQuest(Quest q) {
+    public List<Quest> quests = new List<Quest>();
+    public void acceptQuest(Quest q) {
         quests.Add(q);
         q.begin();
     }
 
     // Use this for initialization
     protected override void Start () {
-        if (defaultInstance == null) {
-            defaultInstance = this;
-        }
+        instance = this;
 
         base.Start();
         nextEatPeriod = Time.time + eatPeriod;
@@ -52,17 +72,17 @@ public class Player : Character {
 
 
     protected override void hello(Character other) {
-        Debug.Log("hello other: " + other);
+        // Debug.Log("hello other: " + other);
     }
 
     public override void onInput(int dx, int dy) {
-        if (food < 0) return;
+        if (fat < 0) return;
         if (enter(posX + dx, posY + dy)) {
             exit(posX, posY);
             posX += dx;
             posY += dy;
 
-            food -= moveCost();
+            eat(moveCost());
             lastMoveTime = Time.time;
         }
         movementSound.Play();

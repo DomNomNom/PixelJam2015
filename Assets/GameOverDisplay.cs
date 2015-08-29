@@ -12,7 +12,7 @@ public class GameOverDisplay : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-        if (Player.food < 0) {
+        if (Player.instance.fat < 0) {
             text_moveCost.gameObject.SetActive(true);
         }
 
