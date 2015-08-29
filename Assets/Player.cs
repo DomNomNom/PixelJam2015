@@ -7,6 +7,9 @@ public class Player : Character {
 
     public int fatBurned = 0;
 
+    private int fatHigh = 400;
+    private int fatLow = 200;
+
     private int _fat = 100;
     public int fat
     {
@@ -31,6 +34,7 @@ public class Player : Character {
 
     private float lastMoveTime = 0;
     public AudioSource movementSound;
+    public TextMesh textMesh;
 
     public AnimationCurve moveCostCurve;
     public int moveCost() {
@@ -64,6 +68,19 @@ public class Player : Character {
 
         base.Start();
         nextEatPeriod = Time.time + eatPeriod;
+        Debug.Assert(textMesh != null);
+    }
+
+    private void RefreshColor() {
+       Color c = Color.red;
+       if (fat < fatLow) {
+            c = Color.red;
+       } else if (fat < fatHigh) {
+            c = Color.yellow;
+       } else {
+            c = Color.green;
+       }
+       textMesh.color = c;
     }
 
     // Update is called once per frame
@@ -74,6 +91,7 @@ public class Player : Character {
         }
 
         base.Update();
+        this.RefreshColor();
     }
 
 
