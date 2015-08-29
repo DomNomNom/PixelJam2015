@@ -51,8 +51,8 @@ public class Character : MonoBehaviour {
 
     private bool gotMovementBlocked;
     protected virtual bool enter(int x, int y) {
-        List<Character> room = getRoom(x,y);
-        Utils.Assert(!room.Contains(this));
+        List<Character> room = new List<Character>(getRoom(x,y));
+        // Utils.Assert(!room.Contains(this));
 
         gotMovementBlocked = false;
         List<Character> greeted = new List<Character>();
@@ -73,7 +73,7 @@ public class Character : MonoBehaviour {
             }
         }
         else {
-            room.Add(this);
+            getRoom(x,y).Add(this);
         }
 
         return !gotMovementBlocked;

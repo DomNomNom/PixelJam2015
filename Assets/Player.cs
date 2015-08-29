@@ -48,8 +48,11 @@ public class Player : Character {
 
     public List<Quest> quests = new List<Quest>();
     public void acceptQuest(Quest q) {
-        quests.Add(q);
+        if (!quests.Contains(q)) {
+            quests.Add(q);
+        }
         q.begin();
+        Debug.Log("Player accepted: " + q);
     }
 
     // Use this for initialization
