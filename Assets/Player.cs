@@ -4,10 +4,10 @@ using System.Collections.Generic;
 
 public class Player : Character {
 
-
     public static int food = 100;
     public static int foodEaten = 0;
     private static float lastMoveTime;
+    public AudioSource movementSound;
 
     private static Player defaultInstance;
     public AnimationCurve moveCostCurve;
@@ -65,6 +65,7 @@ public class Player : Character {
             food -= moveCost();
             lastMoveTime = Time.time;
         }
+        movementSound.Play();
     }
 
 }
