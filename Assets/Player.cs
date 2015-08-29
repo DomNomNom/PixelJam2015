@@ -6,8 +6,6 @@ public class Player : Character {
     public static Player instance;
 
     public int fatBurned = 0;
-    public int maxLowHealth;
-    public int maxMediumHealth;
 
     public int fatHigh;
     public int fatLow;
@@ -42,11 +40,6 @@ public class Player : Character {
     public int moveCost() {
         float restingTime = Time.time - lastMoveTime;
         return (int)moveCostCurve.Evaluate(restingTime);
-    }
-    public void eat(int amount) {
-        if (fat < 0) return;
-        fat -= amount;
-        fatBurned += amount;
     }
 
     private float nextEatPeriod;
@@ -87,10 +80,10 @@ public class Player : Character {
 
     // Update is called once per frame
     protected override void Update () {
-        if (Time.time > nextEatPeriod) {
-           nextEatPeriod += eatPeriod;
-           eat(1); // execute block of code here
-        }
+        // if (Time.time > nextEatPeriod) {
+        //    nextEatPeriod += eatPeriod;
+        //    eat(1); // execute block of code here
+        // }
 
         base.Update();
         this.RefreshColor();
@@ -108,7 +101,7 @@ public class Player : Character {
             posX += dx;
             posY += dy;
 
-            eat(moveCost());
+            fat -= moveCost();
             lastMoveTime = Time.time;
         }
         movementSound.Play();

@@ -5157,12 +5157,20 @@ Prefab:
       objectReference: {fileID: 690414528}
     - target: {fileID: 11453016, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
       propertyPath: eatPeriod
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11453016, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
       propertyPath: textMesh
       value: 
       objectReference: {fileID: 1814716132}
+    - target: {fileID: 11453016, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
+      propertyPath: fatHigh
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 11453016, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
+      propertyPath: fatLow
+      value: 150
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 747c6eafc09ef364aa4897ce6140ffe0, type: 2}
   m_IsPrefabParent: 0
