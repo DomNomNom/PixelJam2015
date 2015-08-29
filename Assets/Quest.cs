@@ -14,7 +14,7 @@ public class Quest : Character {
     private Color originalColor;
     private Color disabledColor = Utils.colorFromHex("8C8C8CFF");
 
-    private bool willRemoveSelf = false;
+    protected bool willRemoveSelf = false;
 
     protected override void Start() {
         base.Start();
