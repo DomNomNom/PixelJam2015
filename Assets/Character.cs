@@ -10,7 +10,7 @@ public class Character : MonoBehaviour {
     }
 
     // returns or creates a room at a given coordinate
-    static List<Character> getRoom(int x, int y) {
+    public static List<Character> getRoom(int x, int y) {
 
         // get or create row
         Dictionary<int, List<Character>> row = null;
@@ -51,9 +51,10 @@ public class Character : MonoBehaviour {
 
     private bool gotMovementBlocked;
     protected virtual bool enter(int x, int y) {
+        getRoom(x,y).Add(this);
+
         List<Character> room = new List<Character>(getRoom(x,y));
         // Utils.Assert(!room.Contains(this));
-
         gotMovementBlocked = false;
         List<Character> greeted = new List<Character>();
         foreach (Character roomie in room) {
@@ -71,9 +72,7 @@ public class Character : MonoBehaviour {
                 bye(roomie);
                 roomie.respond_bye(this);
             }
-        }
-        else {
-            getRoom(x,y).Add(this);
+            getRoom(x,y).Remove(this);
         }
 
         return !gotMovementBlocked;

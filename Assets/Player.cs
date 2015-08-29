@@ -51,8 +51,11 @@ public class Player : Character {
         if (!quests.Contains(q)) {
             quests.Add(q);
         }
+        else {
+            Debug.LogWarning("Quest is being added twice: "+ q);
+        }
         q.begin();
-        Debug.Log("Player accepted: " + q);
+        // Debug.Log("Player accepted: " + q);
     }
 
     // Use this for initialization
@@ -75,7 +78,7 @@ public class Player : Character {
 
 
     protected override void hello(Character other) {
-        // Debug.Log("hello other: " + other);
+        Debug.Log("hello other: " + other);
     }
 
     public override void onInput(int dx, int dy) {

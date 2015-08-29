@@ -14,14 +14,11 @@ public class Quest : Character {
     private Color originalColor;
     private Color disabledColor = Utils.colorFromHex("8C8C8CFF");
 
-    protected bool willRemoveSelf = false;
-
     protected override void Start() {
         base.Start();
         Debug.Assert(null != sprite);
         originalColor = sprite.color;
 
-        exit(posX, posY);
         gameObject.SetActive(false);
         if (isFirstQuest) {
             Player.instance.acceptQuest(this);
@@ -31,12 +28,6 @@ public class Quest : Character {
     protected override void Update() {
         base.Update();
         sprite.color = (canTurnIn())? originalColor : disabledColor;
-
-        if (willRemoveSelf) {
-            exit(posX, posY);
-            gameObject.SetActive(false);
-            willRemoveSelf = false;
-        }
     }
 
 
@@ -47,7 +38,6 @@ public class Quest : Character {
     }
 
     protected override void hello(Character other) {
-        respond_hello(other);
     }
 
     protected override void respond_hello(Character other) {
@@ -61,14 +51,14 @@ public class Quest : Character {
 
         Player.instance.fat += promisedReward;
 
-        foreach (Quest q in followUpQuests) {
-            Debug.Log("ACCEPT!");
-            Player.instance.acceptQuest(q);
-        }
-
         if (!isPersistentQuest) {
             Player.instance.quests.Remove(this);
-            willRemoveSelf = true;
+            gameObject.SetActive(false);
+            exit(posX, posY);
+        }
+
+        foreach (Quest q in followUpQuests) {
+            Player.instance.acceptQuest(q);
         }
     }
 
