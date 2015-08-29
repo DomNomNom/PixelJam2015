@@ -6,6 +6,8 @@ public class Player : Character {
 
     public int Food;
 
+    public AudioSource movementSound;
+
     public List<Quest> quests = new List<Quest>();
     public void acceptQuest(Quest q) {
         quests.Add(q);
@@ -33,6 +35,7 @@ public class Player : Character {
             posX += dx;
             posY += dy;
         }
+        movementSound.Play();
     }
 
 }
