@@ -25,7 +25,10 @@ public class MyInput : MonoBehaviour {
         }
 
         // space = restart
-        if (Input.GetKeyDown(KeyCode.Space   )) {
+        if (
+            Input.GetKeyDown(KeyCode.Space   ) ||
+            Input.GetKeyDown(KeyCode.R       )
+        ) {
             Character.clearRooms();
             Application.LoadLevel(Application.loadedLevel);
         }

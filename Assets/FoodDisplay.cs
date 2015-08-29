@@ -65,9 +65,6 @@ public class FoodDisplay : MonoBehaviour {
             )
         );
     }
-    public void displayFatBurnComplete() {
-        Debug.Log("COMLETUM!");
-    }
 
     private string appendUnit(int amount) {
         return amount + " cal";

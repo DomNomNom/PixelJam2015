@@ -5,6 +5,7 @@ using System.Collections.Generic;
 public class Player : Character {
     public static Player instance;
 
+
     public int fatBurned = 0;
 
     public int fatHigh;
@@ -42,8 +43,11 @@ public class Player : Character {
         return (int)moveCostCurve.Evaluate(restingTime);
     }
 
-    private float nextEatPeriod;
-    public float eatPeriod = 1.0f;
+    bool wasDead = false;
+    private List<ShowIfPlayerDead> deathListeners = new List<ShowIfPlayerDead>();
+    public void addDeathListener(ShowIfPlayerDead listener) {
+        deathListeners.Add(listener);
+    }
 
     public List<Quest> quests = new List<Quest>();
     public void acceptQuest(Quest q) {
@@ -62,8 +66,20 @@ public class Player : Character {
         instance = this;
 
         base.Start();
-        nextEatPeriod = Time.time + eatPeriod;
         Debug.Assert(textMesh != null);
+    }
+
+    // Update is called once per frame
+    protected override void Update () {
+        base.Update();
+        this.RefreshColor();
+
+        if (fat < 0 && !wasDead) {
+            wasDead = true;
+            foreach (var listener in deathListeners) {
+                listener.onPlayerDeath();
+            }
+        }
     }
 
     private void RefreshColor() {
@@ -78,16 +94,6 @@ public class Player : Character {
        textMesh.color = c;
     }
 
-    // Update is called once per frame
-    protected override void Update () {
-        // if (Time.time > nextEatPeriod) {
-        //    nextEatPeriod += eatPeriod;
-        //    eat(1); // execute block of code here
-        // }
-
-        base.Update();
-        this.RefreshColor();
-    }
 
 
     protected override void hello(Character other) {
