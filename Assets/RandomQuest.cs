@@ -12,9 +12,14 @@ public class RandomQuest : Quest {
             //willRemoveSelf = true;
             exit(posX, posY);
         }
-        posX = (int)Random.Range(-5, 5);
-        posY = (int)Random.Range(-5, 5);
-
+        int new_posX = posX;
+        int new_posY = posY;
+        while (new_posX == posX && new_posY == posY) {
+            new_posX = (int)Random.Range(-5, 5);
+            new_posY = (int)Random.Range(-5, 5);
+        }
+        posX = new_posX;
+        posY = new_posY;
         enter(posX, posY);
         Debug.Log("random begin: " + posX + " " + posY);
     }
