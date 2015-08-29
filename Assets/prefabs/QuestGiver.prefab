@@ -39,7 +39,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 167850}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.48203015, y: 3.10309124, z: 10}
+  m_LocalPosition: {x: 3, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 463054}
@@ -65,10 +65,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 167850}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ff53329ecd6b5848ab94274789cbe4b, type: 3}
+  m_Script: {fileID: 11500000, guid: 352540d16661ec44fb06b1a83f2fe137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quests: []
+  promisedReward: 0
+  isPersistentQuest: 1
+  followUpQuests: []
+  sprite: {fileID: 21298156}
 --- !u!212 &21298156
 SpriteRenderer:
   m_ObjectHideFlags: 1

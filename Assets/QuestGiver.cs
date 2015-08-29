@@ -7,10 +7,10 @@ public class QuestGiver : Character {
 
     protected override void respond_hello(Character other) {
         if (other is Player) {
-            Player player = other as Player;
+            // Player player = other as Player;
 
             foreach (Quest q in quests) {
-                player.acceptQuest(q);
+                Player.acceptQuest(q);
             }
             gameObject.SetActive(false);
 

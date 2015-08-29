@@ -12,6 +12,24 @@ public class MyInput : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
+
+        // esc = quit
+        if (Input.GetKeyDown(KeyCode.Escape   )) {
+            #if UNITY_EDITOR
+                UnityEditor.EditorApplication.isPlaying = false;
+            #elif UNITY_WEBPLAYER
+                Application.OpenURL("http://google.com");
+            #else
+                Application.Quit();
+            #endif
+        }
+
+        // space = restart
+        if (Input.GetKeyDown(KeyCode.Space   )) {
+            Application.LoadLevel(Application.loadedLevel);
+        }
+
+
         if (Input.GetKeyDown(KeyCode.UpArrow   ))  singleMove( 0, 1); // dy += 1;
         if (Input.GetKeyDown(KeyCode.LeftArrow ))  singleMove(-1, 0); // dx -= 1;
         if (Input.GetKeyDown(KeyCode.DownArrow ))  singleMove( 0,-1); // dy -= 1;

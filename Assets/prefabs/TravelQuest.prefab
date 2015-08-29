@@ -68,6 +68,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 352540d16661ec44fb06b1a83f2fe137, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  promisedReward: 200
+  isPersistentQuest: 1
+  followUpQuests: []
+  sprite: {fileID: 21268130}
+  disabledColor: {r: .549019635, g: .549019635, b: .549019635, a: 1}
 --- !u!212 &21268130
 SpriteRenderer:
   m_ObjectHideFlags: 1
