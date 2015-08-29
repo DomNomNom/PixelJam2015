@@ -7,8 +7,8 @@ public class Player : Character {
 
     public int fatBurned = 0;
 
-    private int fatHigh = 400;
-    private int fatLow = 200;
+    private int fatHigh = 5000;
+    private int fatLow = 2000;
 
     private int _fat = 100;
     public int fat
