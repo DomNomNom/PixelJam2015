@@ -2883,8 +2883,8 @@ MonoBehaviour:
   changeStartTime: 39
   delay: 5
   currentDelay: 0
-  color2: {r: .344074428, g: .544117689, b: .54411763, a: 1}
-  color3: {r: .514705896, g: .272491366, b: .491395622, a: 1}
+  color2: {r: .423226655, g: .558823526, b: .558823466, a: 1}
+  color3: {r: .514705896, g: .359537214, b: .499772757, a: 1}
 --- !u!1001 &135158020
 Prefab:
   m_ObjectHideFlags: 0
